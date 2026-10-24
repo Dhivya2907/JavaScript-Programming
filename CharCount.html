@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Character Counter</title>
+</head>
+
+<body>
+
+    <h1>Character Counter</h1>
+
+    <p>Max 200 Characters</p>
+
+    <textarea id="inputBox" placeholder="Type your message" rows="5" cols="40" maxlength="200"></textarea>
+
+    <p id="counter">0/200 characters</p>
+
+    <p id="remaining">Remaining characters: 200</p>
+
+    <script>
+
+
+
+        var inputBox = document.getElementById("inputBox")
+        var counter = document.getElementById("counter")
+        var remaining = document.getElementById("remaining")
+
+
+
+        inputBox.addEventListener("input", function () {
+
+            var count = inputBox.value.length;
+
+            counter.textContent = count + "/200 characters";
+
+            remaining.textContent = "Remaining characters: " + (200 - count);
+
+            if (count == 200) {
+                alert("Maximum character limit reached!");
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
